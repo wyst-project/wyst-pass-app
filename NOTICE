@@ -1,0 +1,16 @@
+Wyst Pass
+Copyright 2026 Wyst
+
+This product includes software developed by the Wyst project (https://wyst.lol)
+
+Licensed under the Apache License, Version 2.0, see the LICENSE file
+
+Third party material shipped with this source:
+
+- Brand icons in src/components/PlatformIcon.tsx and src/lib/pass/serviceIcons.ts
+  come from Simple Icons (https://simpleicons.org), released under CC0 1.0
+  Every brand mark stays the property of its owner and is used to identify a
+  service, not to claim any affiliation
+- The animated background in src/components/Grainient.tsx is a WebGL gradient
+  component adapted for this project, it renders through ogl (MIT)
+- Runtime dependencies keep their own licenses, see the lockfiles of each app

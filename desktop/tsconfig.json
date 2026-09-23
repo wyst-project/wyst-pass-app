@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "jsx": "react-jsx",
+    "strict": true,
+    "noEmit": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "isolatedModules": true,
+    "resolveJsonModule": true,
+    "allowImportingTsExtensions": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["../src/*"]
+    },
+    "types": ["vite/client"]
+  },
+  "include": ["src", "vite-env.d.ts", "../src/lib", "../src/components/pass", "../src/components/PlatformIcon.tsx", "../src/components/Grainient.tsx"],
+  "exclude": ["../src/lib/i18n/server.ts", "node_modules", "src-tauri", "dist"]
+}

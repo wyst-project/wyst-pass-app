@@ -1,0 +1,78 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "Wyst Pass",
+  "version": "1.0.0",
+  "identifier": "lol.wyst.pass",
+  "build": {
+    "beforeDevCommand": "npm run dev",
+    "devUrl": "http://localhost:1420",
+    "beforeBuildCommand": "npm run build",
+    "frontendDist": "../dist"
+  },
+  "app": {
+    "windows": [
+      {
+        "label": "main",
+        "title": "Wyst Pass",
+        "width": 620,
+        "height": 480,
+        "minWidth": 620,
+        "minHeight": 480,
+        "center": true,
+        "resizable": false,
+        "decorations": false,
+        "shadow": true,
+        "transparent": false,
+        "visible": true,
+        "dragDropEnabled": false,
+        "maximizable": false
+      }
+    ],
+    "security": {
+      "csp": "default-src 'self'; connect-src 'self' ipc: http://ipc.localhost http://localhost:3001 https://api.wyst.lol https://*.wyst.lol; img-src 'self' data: blob: http://localhost:3001 https://*.wyst.lol https://cdn.discordapp.com; style-src 'self' 'unsafe-inline' https://api.fontshare.com; font-src 'self' data: https://cdn.fontshare.com https://api.fontshare.com; script-src 'self'; worker-src 'self' blob:"
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": [
+      "app",
+      "dmg"
+    ],
+    "createUpdaterArtifacts": false,
+    "publisher": "Wyst",
+    "category": "Utility",
+    "shortDescription": "Wyst Pass",
+    "longDescription": "The Wyst password manager on your desktop: logins, two-factor codes, notes and cards, encrypted on your side",
+    "icon": [
+      "icons/32x32.png",
+      "icons/128x128.png",
+      "icons/128x128@2x.png",
+      "icons/icon.icns",
+      "icons/icon.ico"
+    ],
+    "windows": {
+      "webviewInstallMode": {
+        "type": "downloadBootstrapper",
+        "silent": true
+      },
+      "allowDowngrades": true
+    },
+    "macOS": {
+      "minimumSystemVersion": "12.0",
+      "dmg": {
+        "appPosition": {
+          "x": 180,
+          "y": 170
+        },
+        "applicationFolderPosition": {
+          "x": 480,
+          "y": 170
+        },
+        "windowSize": {
+          "width": 660,
+          "height": 400
+        }
+      }
+    }
+  }
+}

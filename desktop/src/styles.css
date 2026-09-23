@@ -1,0 +1,130 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@source "../../src/components/pass";
+@source "../../src/components/PlatformIcon.tsx";
+@source "../../src/components/Grainient.tsx";
+@source "../../src/components/LanguageSwitcher.tsx";
+
+@theme {
+  --color-bio-primary: #bf3664;
+  --font-sans: "Satoshi", "Segoe UI", sans-serif;
+  --font-mono: "Satoshi", "Segoe UI", sans-serif;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+  background: #050505;
+  color: #fff;
+  font-family: "Satoshi", "Segoe UI", sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  -webkit-user-drag: none;
+}
+
+body {
+  user-select: none;
+}
+
+input,
+textarea,
+select,
+[data-selectable] {
+  user-select: text;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.08);
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(255, 255, 255, 0.14);
+}
+
+::-webkit-scrollbar-corner {
+  display: none;
+}
+
+::selection {
+  background-color: rgba(191, 54, 100, 0.4);
+}
+
+.wyst-titlebar {
+  -webkit-app-region: drag;
+}
+
+.wyst-titlebar button,
+.wyst-titlebar a {
+  -webkit-app-region: no-drag;
+}
+
+@keyframes wizard-in {
+  from {
+    opacity: 0;
+    transform: translateX(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes wizard-back {
+  from {
+    opacity: 0;
+    transform: translateX(-24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.wizard-page[data-direction="forward"] {
+  animation: wizard-in 220ms ease-out;
+}
+
+.wizard-page[data-direction="back"] {
+  animation: wizard-back 220ms ease-out;
+}
+
+@keyframes progress-slide {
+  0% {
+    left: -40%;
+    width: 40%;
+  }
+  100% {
+    left: 100%;
+    width: 40%;
+  }
+}
+
+.progress-indeterminate::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  height: 100%;
+  border-radius: inherit;
+  background: #bf3664;
+  animation: progress-slide 1.2s ease-in-out infinite;
+}
